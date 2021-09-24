@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        .meu{
+
+            border-radius: 5px;
+
+            background-color:#F5BE49;
+            height: 550px;
+            width: 300px;
+        
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+
+            font-family: Trebuchet MS, sans-serif;
+
+        }
+
+        .container1{
+            height: 60px;
+        }
+
+        .primeiro{
+            display: flex;
+            flex-direction: row;
+            
+            
+            justify-content: space-evenly;
+        }
+
+        .pequeno{
+            border-radius: 4px;
+            border: rgb(39, 38, 38) 2px solid;
+
+            width: 100px;
+            height: 35px;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <div class="meu">
+        <form>
+            <div class="container1" style="background-color:#F5BE49;">
+                <div class="primeiro">
+                    <input id="la" style="font-family:Trebuchet MS, sans-serif;" type="text" class="pequeno" placeholder="  Lição atual">
+                    <input id="ua" style="font-family:Trebuchet MS, sans-serif;" type="text" class="pequeno" placeholder="  Unidade atual">
+                </div>
+            </div>
+            <div style="background-color:#F5BE49;">
+                <div class="primeiro">
+                    <input id="natual" style="font-family:Trebuchet MS, sans-serif; width: 200px; height:35px ;" type="text" class="pequeno" placeholder="  Nível atual">
+                </div>
+            </div>
+            
+            <div style="background-color:#F5BE49;">
+                <div class="primeiro">
+                    <input id="na" style="margin-top:10px; font-family:Trebuchet MS, sans-serif; width: 140px; height:35px ;" type="text" class="pequeno" placeholder="  Níveis anteriores">
+                </div>
+            </div>
+
+            <div style="background-color:#F5BE49; margin-top: 10px;">
+                <div class="primeiro">
+                    <input id="ld" style="font-family:Trebuchet MS, sans-serif;margin-bottom: 10px; width: 100px; height:35px ;" type="text" class="pequeno" placeholder="  Lições por dia">
+                </div>
+            </div>
+            
+            <div class="primeiro">
+                <button style="font-family:Trebuchet MS, sans-serif; width: 100px; height:35px ;" type="button" class="pequeno" onclick="enviar()">Enviar</button>
+            </div>
+            
+
+            <div style="align-items: center;display:flex; justify-content: center; background-color:#F5BE49; width: 300px; height: 200px;">
+                <div style="border-radius: 4px;align-items: center;display:flex; justify-content: center; background-color:#272727; width: 250px; height: 160px;">
+                    <div style="border-radius: 4px; display:flex;flex-direction: column;align-items: center; justify-content: center; background-color:#f3efef; width: 240px; height: 150px;">
+                        <h4>Data de finalização:</h4>
+                        <p id="resultado"></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+<script>
+    function enviar(){
+        function coletando(){
+            var la, ua, natual, na, resultado;
+
+            la = document.getElementById('la').value
+            ua = document.getElementById('ua').value
+            natual = document.getElementById('natual').value
+            na = document.getElementById('na').value
+            ld = document.getElementById('ld').value
+            resultado = document.getElementById('resultado')
+
+            //coletando dados
+            la = parseInt(la)
+            ua = parseInt(ua)
+            natual = parseInt(natual)
+            na = parseInt(na)
+
+            var nr = 16-natual;
+            var nr = nr+na;
+            
+
+
+            //dados recolhidos
+            /*
+            console.log(`${la} -- la`)
+            console.log(`${ua} -- ua`)
+            console.log(`${natual} -- natual`)
+            console.log(`${na} -- na`)
+            console.log(`${ld} -- ld`)
+            console.log(`${nr} -- nr`)
+            console.log('')
+            */
+
+
+            //parte 1
+            var lr = 4-la 
+            //console.log(`${lr} -- Lições restantes na unidade`)
+
+
+            //parte 2
+            var ur = 6-ua
+            var lu = ur*4
+            var lt = lr+lu
+            //console.log(`${lt} -- Lições totais no nível`)
+            
+
+            //parte 3
+            var lr = nr*4
+            var lr = lr*6
+            //console.log(`${lr} -- Lições dos outros níveis`)
+
+
+            //parte 4
+            lt = lt+lr
+            //console.log(`${lt} -- Lições totais`)
+            
+            
+            return lt
+        }
+        
+        function data(){
+        
+        data = new Date()
+        
+        
+        dia = parseInt(data.getDay())
+        mes = (parseInt(data.getMonth())+1)
+    
+        //dias restantes no mês
+        var drm = 30-dia
+
+
+        //dias restantes no ano
+        var mesRestante = 12-mes
+        dr = (mesRestante*30)
+        
+
+        var dias = [dr,drm, mes]
+        return dias
+        }
+        
+
+        var lt = coletando()
+        var dias = data()
+
+        dr = dias[0]
+        drm = dias[1]
+        mes = dias[2]
+
+        
+        var densidade = lt/ld
+
+
+        densidade = densidade-drm
+        mes+=1
+        
+        while (densidade>30){
+            densidade= densidade - 30;
+            mes= mes + 1
+        }
+     
+        mensagem = (`Dia: ${densidade} \nMês: ${mes}`)
+        resultado.innerHTML = (mensagem)
+    }
+</script>
+
+
+</html>
