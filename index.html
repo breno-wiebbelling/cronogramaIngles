@@ -160,7 +160,7 @@
             lt = lt+lr
             //console.log(`${lt} -- Lições totais`)
             
-            window.alert(lt)
+            //window.alert(lt)
             return lt
         }
         
@@ -175,13 +175,9 @@
         //dias restantes no mês
         var drm = 30-dia
 
-
-        //dias restantes no ano
-        var mesRestante = 12-mes
-        dr = (mesRestante*30)
         
 
-        var dias = [dr,drm, mes]
+        var dias = [drm, mes]
         return dias
         }
         
@@ -189,12 +185,13 @@
         var lt = coletando()
         var dias = data()
 
-        dr = dias[0]
-        drm = dias[1]
-        mes = dias[2]
-
+        drm = dias[0]
+        mes = dias[1]
+        window.alert(drm)
+        window.alert(mes)
         
         var densidade = lt/ld
+        window.alert(densidade)
 
 
         densidade = densidade-drm
