@@ -169,8 +169,8 @@
         data = new Date()
         
         
-        dia = parseInt(window.prompt('dia: '))
-        mes = parseInt(window.prompt('mes: '))
+        dia = parseInt(data.getDate())
+        mes = parseInt(data.getMonth())+1
     
         //dias restantes no mês
         var drm = 30-dia
