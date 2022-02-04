@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.meu{
+
+    border-radius: 5px;
+
+    background-color:#F5BE49;
+    height: 550px;
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    font-family: Trebuchet MS, sans-serif;
+
+}
+
+.container1{
+    height: 60px;
+}
+
+.primeiro{
+    display: flex;
+    flex-direction: row;
+    
+    
+    justify-content: space-evenly;
+}
+
+.pequeno{
+    border-radius: 4px;
+    border: rgb(39, 38, 38) 2px solid;
+
+    width: 100px;
+    height: 35px;
+}
+input{
+    text-align:center;
+}
