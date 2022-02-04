@@ -85,7 +85,7 @@ function enviar(){
 
     mensagem = (`Dia: ${densidade.toFixed(1)} \nMês: ${mes}`)
     resultado.innerHTML = (mensagem)
-    console.log(mensagem)
+    //console.log(mensagem)
 }
 
 enviar()
