@@ -2,6 +2,8 @@ function enviar(){
     function coletando(){
         var la, ua, natual, na, resultado;
 
+
+        /*
         la = document.getElementById('la').value
         ua = document.getElementById('ua').value
         natual = document.getElementById('natual').value
@@ -18,11 +20,22 @@ function enviar(){
         var nr = 16-natual;
         var nr = nr+na;
         
+        */
 
+        la = 2
+        ua = 3
+        natual = 13
+    
+        na = 0 
+        ld = 4
+        resultado = ''
+
+        nr = 16-natual;
+        nr = nr+na;
 
         //dados recolhidos
         /*
-        console.log(`${la} -- la`)
+        console.log(`${la} -- la`)K
         console.log(`${ua} -- ua`)
         console.log(`${natual} -- natual`)
         console.log(`${na} -- na`)
@@ -55,6 +68,8 @@ function enviar(){
         //console.log(`${lt} -- Lições totais`)
         
         //window.alert(lt)
+        console.log(`Lt --> ${lt}`)
+
         return lt
     }
     
@@ -71,7 +86,7 @@ function enviar(){
 
     
 
-    var dias = [drm, mes]
+    var dias = [drm, mes, dia]
     return dias
     }
     
@@ -81,21 +96,30 @@ function enviar(){
 
     drm = dias[0]
     mes = dias[1]
+    dia = dias[2]
     //window.alert(drm)
     //window.alert(mes)
     
     var densidade = lt/ld
     //window.alert(densidade)
 
-
-    densidade = densidade-drm
-    mes+=1
-    
-    while (densidade>30){
-        densidade= densidade - 30;
-        mes= mes + 1
+    console.log(densidade)
+    if (densidade>30){
+        densidade = densidade-drm
+        mes+=1
+        
+        while (densidade>30){
+            densidade= densidade - 30;
+            mes= mes + 1
+        }
+    }else{
+        densidade+=dia
     }
- 
+
     mensagem = (`Dia: ${densidade.toFixed(1)} \nMês: ${mes}`)
-    resultado.innerHTML = (mensagem)
+    //resultado.innerHTML = (mensagem)
+    console.log(mensagem)
 }
+
+
+enviar()
