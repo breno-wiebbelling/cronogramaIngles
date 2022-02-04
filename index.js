@@ -64,11 +64,8 @@ function enviar(){
     drm = dias[0]
     mes = dias[1]
     dia = dias[2]
-    //window.alert(drm)
-    //window.alert(mes)
     
     var densidade = lt/ld
-    //window.alert(densidade)
 
     console.log(densidade)
     if (densidade>30){
