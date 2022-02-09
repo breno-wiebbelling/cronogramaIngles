@@ -60,13 +60,15 @@ function enviar(){
 
     var lt = coletando()
     var dias = data()
-    window.alert(`${lt} Lições`)
     drm = dias[0]
     mes = dias[1]
     dia = dias[2]
     
     var densidade = lt/ld
 
+    window.alert(`${lt} Lições <br>${densidade.toFixed(2)} Densidade`)
+    
+    
     console.log(densidade)
     if (densidade>30){
         densidade = densidade-drm
