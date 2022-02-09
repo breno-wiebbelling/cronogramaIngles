@@ -66,7 +66,7 @@ function enviar(){
     
     var densidade = lt/ld
 
-    window.alert(`${lt} Lições <br>${densidade.toFixed(2)} Densidade`)
+    console.log(`${lt} Lições \n${densidade.toFixed(2)} Densidade`)
     
     
     console.log(densidade)
