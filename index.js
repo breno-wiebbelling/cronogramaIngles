@@ -60,7 +60,7 @@ function enviar(){
 
     var lt = coletando()
     var dias = data()
-
+    window.alert(`${lt} Lições`)
     drm = dias[0]
     mes = dias[1]
     dia = dias[2]
