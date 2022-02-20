@@ -66,10 +66,10 @@ function enviar(){
     
     var densidade = lt/ld
 
-    console.log(`${lt} Lições \n${densidade.toFixed(2)} Densidade`)
+    //console.log(`${lt} Lições \n${densidade.toFixed(2)} Densidade`)
     
     
-    console.log(densidade)
+    //console.log(densidade)
     if (densidade>30){
         densidade = densidade-drm
         mes+=1
@@ -89,7 +89,7 @@ function enviar(){
 
     mensagem = (`Dia: ${densidade.toFixed(1)} \nMês: ${mes}`)
     resultado.innerHTML = (mensagem)
-    //console.log(mensagem)
+    console.log(mensagem)
 }
 
 enviar()
