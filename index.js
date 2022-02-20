@@ -81,6 +81,11 @@ function enviar(){
     }else{
         densidade+=dia
     }
+    
+    if (dia>=30){
+        densidade-=30
+        mes+=1
+    }
 
     mensagem = (`Dia: ${densidade.toFixed(1)} \nMês: ${mes}`)
     resultado.innerHTML = (mensagem)
