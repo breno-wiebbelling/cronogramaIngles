@@ -82,7 +82,7 @@ function enviar(){
         densidade+=dia
     }
     
-    if (dia>=30){
+    if (densidade>=30){
         densidade-=30
         mes+=1
     }
