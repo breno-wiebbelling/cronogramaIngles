@@ -87,7 +87,7 @@ function enviar(){
         mes+=1
     }
 
-    mensagem = (`Dia: ${densidade.toFixed(1)} \nMês: ${mes}`)
+    mensagem = (`Dia: ${Math.round(densidade)} \nMês: ${mes}`)
     resultado.innerHTML = (mensagem)
     console.log(mensagem)
 }
